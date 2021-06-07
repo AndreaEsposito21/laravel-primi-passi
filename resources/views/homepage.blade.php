@@ -7,6 +7,34 @@
     <title>homepage</title>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <header>
+        <h1> Hello World </h1>
+
+        <h2> Questa è {{ $name_page }} </h2>
+
+        <h2> Questi sono i link per altre pagine</h2>
+        <ul>
+            <li>
+                <a href="{{ route('page_one') }}">Vai pagina 1</a>
+            </li>
+
+            <li>
+                <a href="{{ route('page_two') }}">Vai pagina 2</a>
+            </li>
+
+            <li>
+                <a href="{{ route('page_three') }}">Vai pagina 3</a>
+            </li>
+        </ul>
+
+        @if (count($data_test) > 0)
+        <ul>
+            Test:
+            @foreach ($data_test as $test)
+                <li> {{ $test }} </li>
+            @endforeach
+        </ul>
+        @endif
+    </header>
 </body>
 </html>
